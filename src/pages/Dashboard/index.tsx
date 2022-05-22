@@ -36,7 +36,7 @@ const Dashboard: React.FC = () => {
         <div className="container flex flex-col mx-auto my-5 max-h-screen">
             { isLoading }
             { showError}
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-4 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 { offers.map((offer, index) => (
                     <Card key={offer.id} item={offer} />
                 ))}

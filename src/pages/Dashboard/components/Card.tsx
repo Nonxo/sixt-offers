@@ -12,7 +12,7 @@ const Card: FunctionComponent<Props> = ({ item}) => {
     }
 
     return (
-        <div className="max-w-sm bg-stone-200/50 rounded-lg shadow-xs dark:bg-gray-800 dark:border-gray-700">
+        <div className="max-w-sm bg-stone-200/50 cursor-pointer rounded-lg shadow-xs dark:bg-gray-800 dark:border-gray-700">
             <img className="p-8 rounded-t-lg" src={item.carGroupInfo?.modelExample.imageUrl} alt="product image"/>
 
             <div className="px-5 pb-5">
