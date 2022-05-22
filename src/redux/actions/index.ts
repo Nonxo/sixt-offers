@@ -4,8 +4,8 @@ import {
     FetchOffersRequest,
     FetchOffersSuccess,
     FetchOffersSuccessPayload
-} from "../../types";
-import {offersTypes} from "../../ActionTypes/offersTypes";
+} from "../types";
+import {offersTypes} from "../ActionTypes/offersTypes";
 
 export const handleRequest = (): FetchOffersRequest => ({ type: offersTypes.FETCH_OFFERS_REQUEST })
 

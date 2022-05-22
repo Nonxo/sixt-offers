@@ -2,16 +2,15 @@ import {AxiosError, AxiosResponse} from "axios";
 import { call, put, all, takeLatest } from "redux-saga/effects"
 
 import {getOffers} from "../../services";
-import {handleError, handleSuccess} from "../actions/offerActions";
-import {OfferModel} from "../../model";
+import {handleError, handleSuccess} from "../actions";
 import {offersTypes} from "../ActionTypes/offersTypes";
 
 
-function* read() {
+function* read():any {
     try {
-        const response: AxiosResponse<OfferModel[]> = yield call(getOffers);
-        yield put(handleSuccess({ offers: response.data}))
-    } catch (e) {
+        const response  = yield call(getOffers);
+        yield put(handleSuccess({ offers: response.offers}))
+    } catch (e: any) {
         if (e instanceof AxiosError) {
             yield put(handleError({ error: e.message }))
         } else {

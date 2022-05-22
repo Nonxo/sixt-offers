@@ -1,6 +1,9 @@
-import axios, {AxiosResponse} from "axios"
-import {OfferModel} from "../model";
-
-export const getOffers = (): Promise<AxiosResponse<OfferModel[]>> => {
-    return axios.get<OfferModel[]>(`https://cdn.sixt.io/codingtask/offers.json`)
+export const getOffers = (): any => {
+    return fetch("api/json_files/offers.json", {
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json',
+            Accept: "application/json",
+        },
+    }).then((res) => res.json()).then(data => data)
 }

@@ -13,7 +13,7 @@ export interface FetchOffersSuccessPayload {
 }
 
 export interface FetchOffersFailedPayload {
-    error: string | unknown
+    error: string | null
 }
 
 export interface FetchOffersRequest {

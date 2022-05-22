@@ -1,5 +1,6 @@
 import {OffersActions, OffersState} from "../types";
 import {offersTypes} from "../ActionTypes/offersTypes";
+import {Reducer} from "redux";
 
 
 
@@ -9,7 +10,7 @@ const initialState: OffersState = {
     error: null
 }
 
-export default (state = initialState, action: OffersActions) => {
+const offersReducer: Reducer<OffersState, OffersActions> = (state = initialState, action: OffersActions) => {
     switch (action.type) {
         case offersTypes.FETCH_OFFERS_REQUEST:
             return {
@@ -26,7 +27,7 @@ export default (state = initialState, action: OffersActions) => {
         case offersTypes.FETCH_OFFERS_DATA_ERROR:
             return {
                 ...state,
-                pending: false,
+                loading: false,
                 offers: [],
                 error: action.payload.error
             }
@@ -36,3 +37,5 @@ export default (state = initialState, action: OffersActions) => {
             }
     }
 }
+
+export default offersReducer

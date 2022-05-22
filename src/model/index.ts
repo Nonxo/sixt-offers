@@ -1,20 +1,30 @@
 export interface OfferModel {
-    info: { [index: string]: number | string | boolean },
-    offers: Offer[]
+    id: string,
+    carGroupInfo: CarInfo | null
+    prices: TotalPrice
 }
 
-interface Offer {
-    id: string,
-    description: string,
-    images: string | null
-    price: Amount | null
+interface CarInfo {
+    modelExample: Model
+}
 
+interface Model {
+    name: string,
+    imageUrl: string
+}
+
+interface TotalPrice {
+   totalPrice: AmountObj
+}
+
+interface AmountObj {
+   amount: Amount
 }
 
 interface Amount {
-   value: number,
-   display: string,
-   currency: string
+    value: number,
+    display: string,
+    currency: string
 }
 
 
