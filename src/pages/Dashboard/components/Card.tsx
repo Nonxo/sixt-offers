@@ -1,5 +1,5 @@
 import React, {FunctionComponent} from "react";
-import {OfferModel} from "../model";
+import {OfferModel} from "../../../model";
 
 type Props = {
     item: OfferModel

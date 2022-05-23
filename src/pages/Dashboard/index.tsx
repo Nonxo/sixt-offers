@@ -2,10 +2,10 @@ import React, { useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../redux/reducers";
 import {handleRequest} from "../../redux/actions";
-import ErrorState from "../../components/ErrorState";
-import Card from "../../components/Card";
-import Footer from "../../components/Footer";
-import Spinner from "../../components/Spinner";
+import ErrorState from "../../basic-components/ErrorState";
+import Card from "./components/Card";
+import Footer from "../../basic-components/Footer";
+import Spinner from "../../basic-components/Spinner";
 
 const Dashboard: React.FC = () => {
     const dispatch = useDispatch()
