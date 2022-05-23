@@ -1,4 +1,4 @@
-export const getOffers = (): any => {
+export const getOffers = (): Promise<any> => {
     return fetch("api/json_files/offers.json", {
         method: "GET",
         headers: {
