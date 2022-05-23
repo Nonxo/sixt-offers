@@ -1,5 +1,5 @@
 import React, {FunctionComponent} from "react";
-import {OfferModel} from "../../../model";
+import {Amount, OfferModel} from "../../../model";
 
 type Props = {
     item: OfferModel
@@ -7,8 +7,8 @@ type Props = {
 
 const Card: FunctionComponent<Props> = ({ item}) => {
 
-    const formatPrice = (amount: number) => {
-        return new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR'}).format(amount)
+    const formatPrice = (amount: Amount) => {
+        return new Intl.NumberFormat('de-DE', { style: 'currency', currency: amount.currency}).format(amount.value)
     }
 
     return (
@@ -18,7 +18,7 @@ const Card: FunctionComponent<Props> = ({ item}) => {
             <div className="px-5 pb-5">
                 <h6 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">{item.carGroupInfo?.modelExample.name}</h6>
                 <div className="flex justify-center items-center">
-                    <span className="text-lg font-bold text-gray-900 dark:text-white">{formatPrice(item.prices?.totalPrice.amount.value)}</span>
+                    <span className="text-lg font-bold text-gray-900 dark:text-white">{formatPrice(item.prices?.totalPrice.amount)}</span>
                 </div>
             </div>
         </div>

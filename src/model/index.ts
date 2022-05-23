@@ -21,7 +21,7 @@ interface AmountObj {
    amount: Amount
 }
 
-interface Amount {
+export interface Amount {
     value: number,
     display: string,
     currency: string
