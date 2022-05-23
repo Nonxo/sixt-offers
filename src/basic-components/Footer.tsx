@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer: React.FC = () => (
     <footer
-        className="mt-4 bg-transparent rounded-lg md:flex md:items-center md:justify-between md:py-6 dark:transparent">
+        className="flex mt-4 bg-transparent rounded-lg md:flex md:items-center md:justify-between md:py-6 dark:transparent">
     <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="https://www.sixt.de"
                                                                                         className="hover:underline">Sixt™</a>. All Rights Reserved.
     </span>
