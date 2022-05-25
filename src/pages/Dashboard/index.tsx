@@ -4,7 +4,6 @@ import {RootState} from "../../redux/reducers";
 import {handleRequest} from "../../redux/actions";
 import ErrorState from "../../basic-components/ErrorState";
 import Card from "./components/Card";
-import Footer from "../../basic-components/Footer";
 import Spinner from "../../basic-components/Spinner";
 
 const Dashboard: React.FC = () => {
@@ -14,23 +13,17 @@ const Dashboard: React.FC = () => {
     useEffect(() => {
         // Fetch all offers
         dispatch(handleRequest())
-    }, [])
+    }, [dispatch])
 
-    const isLoading = loading ? <Spinner /> : null
+    if (loading) return <Spinner />
 
-    const showError = error ? <ErrorState /> : null
-
+    if (error) return  <ErrorState />
 
     return (
-        <div className="container flex flex-col mx-auto my-5 max-h-screen">
-            { isLoading }
-            { showError}
-            <div className="grid grid-cols-4 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                { offers.map((offer) => (
-                    <Card key={offer.id} item={offer} />
-                ))}
-            </div>
-            <Footer />
+        <div className="grid grid-cols-4 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            { offers.map((offer) => (
+                <Card key={offer.id} item={offer} />
+            ))}
         </div>
     )
 }

@@ -4,7 +4,7 @@ import {Reducer} from "redux";
 
 
 
-const initialState: OffersState = {
+export const initialState: OffersState = {
     loading: false,
     offers: [],
     error: null
