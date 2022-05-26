@@ -1,6 +1,6 @@
+import {Reducer} from "redux";
 import {OffersActions, OffersState} from "../types";
 import {offersTypes} from "../ActionTypes/offersTypes";
-import {Reducer} from "redux";
 
 
 
