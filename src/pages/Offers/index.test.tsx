@@ -9,7 +9,7 @@ import {runSaga} from "redux-saga";
 import {read} from "../../redux/saga/offersSaga";
 
 
-test("several offers should be listed", async () => {
+test("renders offers", async () => {
     const state = getStateWithItems()
     const dispatched = []
     const getOffersSpy = jest.spyOn(service, "getOffers");
