@@ -32,4 +32,4 @@ The core technologies utilized in this web app are:
 `cypress open`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests]([https://facebook.github.io/create-react-app/docs/running-tests](https://www.cypress.io/)) for more information.
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests](https://www.cypress.io/) for more information.
