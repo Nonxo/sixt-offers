@@ -1,9 +1,5 @@
-export const getOffers = (): Promise<any> => {
-    return fetch("api/json_files/offers.json", {
-        method: "GET",
-        headers: {
-            'Content-Type': 'application/json',
-            Accept: "application/json",
-        },
-    }).then((res) => res.json()).then(data => data)
+export const getOffers = async (): Promise<any> => {
+    const results = await fetch("api/json_files/offers.json")
+    const data = results.json()
+    return data
 }

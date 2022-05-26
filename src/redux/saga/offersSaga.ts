@@ -5,7 +5,7 @@ import {handleError, handleSuccess} from "../actions";
 import {offersTypes} from "../ActionTypes/offersTypes";
 
 
-function* read(): any {
+export function* read(): any {
     try {
         const response  = yield call(getOffers);
         yield put(handleSuccess({ offers: response.offers}))
