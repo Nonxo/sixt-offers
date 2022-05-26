@@ -5,7 +5,7 @@ type Props = {
     item: OfferModel
 }
 
-const Card: FunctionComponent<Props> = ({ item}) => {
+const Card: FunctionComponent<Props> = ({ item }) => {
 
     const formatPrice = (amount: Amount) => {
         return new Intl.NumberFormat('de-DE', { style: 'currency', currency: amount.currency}).format(amount.value)
